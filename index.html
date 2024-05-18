@@ -53,6 +53,9 @@
         .button:hover {
             background-color: #0056b3;
         }
+        .selected {
+            background-color: #28a745; /* Màu xanh lá cây khi được chọn */
+        }
         .response {
             display: none;
         }
@@ -114,6 +117,8 @@
         extraButtons.forEach(button => {
             button.addEventListener('click', function(event) {
                 event.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+                extraButtons.forEach(btn => btn.classList.remove('selected')); // Xóa lớp 'selected' khỏi tất cả các nút
+                button.classList.add('selected'); // Thêm lớp 'selected' vào nút được nhấp
                 document.getElementById('finalResponse').style.display = 'block'; // Hiển thị phản hồi cuối cùng
             });
         });
