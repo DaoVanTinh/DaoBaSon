@@ -13,6 +13,8 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            padding: 0 10px; /* Thêm khoảng trống để đảm bảo nội dung không bị cắt trên các màn hình nhỏ */
+            box-sizing: border-box;
         }
         .container {
             background-color: white;
@@ -20,6 +22,8 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            width: 100%;
+            max-width: 500px; /* Đặt chiều rộng tối đa để nội dung không quá lớn trên màn hình lớn */
         }
         .question, .response.yes, .response.no {
             font-size: 24px; /* Đặt cùng kích thước cho cả câu hỏi và phản hồi */
@@ -30,6 +34,7 @@
             display: flex;
             justify-content: space-around;
             margin-top: 20px;
+            flex-wrap: wrap; /* Cho phép các nút xuống dòng trên màn hình nhỏ */
         }
         .button {
             background-color: #007bff;
@@ -40,8 +45,10 @@
             cursor: pointer;
             font-size: 18px;
             text-decoration: none;
-            width: 100px; /* Đặt cùng kích thước cho cả hai nút */
+            width: 45%; /* Đặt chiều rộng linh hoạt để các nút nằm cạnh nhau trên màn hình nhỏ */
+            margin-bottom: 10px; /* Thêm khoảng cách giữa các nút khi xuống dòng */
             text-align: center;
+            box-sizing: border-box;
         }
         .button:hover {
             background-color: #0056b3;
@@ -54,6 +61,11 @@
             font-size: 20px;
             margin-top: 20px;
             color: blue;
+        }
+        @media (min-width: 600px) {
+            .button {
+                width: 30%; /* Điều chỉnh chiều rộng nút trên màn hình lớn hơn */
+            }
         }
     </style>
 </head>
